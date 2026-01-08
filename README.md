@@ -1,93 +1,75 @@
-# gitlab-group
+# <img src="docs/opentofu.png" alt="opentofu" height="20"/> gitlab-group
 
+Zarządzanie grupami w GitLab
 
+<!-- BEGIN_TF_DOCS -->
+## Requirements
 
-## Getting started
+| Name | Version |
+|------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.10.5 |
+| <a name="requirement_gitlab"></a> [gitlab](#requirement\_gitlab) | 18.6.1 |
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+## Providers
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+| Name | Version |
+|------|---------|
+| <a name="provider_gitlab"></a> [gitlab](#provider\_gitlab) | 18.6.1 |
 
-## Add your files
+## Modules
 
-* [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-* [Add files using the command line](https://docs.gitlab.com/topics/git/add_files/#add-files-to-a-git-repository) or push an existing Git repository with the following command:
+No modules.
 
-```
-cd existing_repo
-git remote add origin https://gitlab.com/pl.rachuna-net/artifacts/opentofu/gitlab-group.git
-git branch -M main
-git push -uf origin main
-```
+## Resources
 
-## Integrate with your tools
+| Name | Type |
+|------|------|
+| [gitlab_group.group](https://registry.terraform.io/providers/gitlabhq/gitlab/18.6.1/docs/resources/group) | resource |
+| [gitlab_group_badge.badge](https://registry.terraform.io/providers/gitlabhq/gitlab/18.6.1/docs/resources/group_badge) | resource |
+| [gitlab_group_label.label](https://registry.terraform.io/providers/gitlabhq/gitlab/18.6.1/docs/resources/group_label) | resource |
+| [gitlab_group_membership.members](https://registry.terraform.io/providers/gitlabhq/gitlab/18.6.1/docs/resources/group_membership) | resource |
+| [gitlab_group_share_group.shared_groups](https://registry.terraform.io/providers/gitlabhq/gitlab/18.6.1/docs/resources/group_share_group) | resource |
+| [gitlab_group_variable.variable](https://registry.terraform.io/providers/gitlabhq/gitlab/18.6.1/docs/resources/group_variable) | resource |
+| [gitlab_group.parent](https://registry.terraform.io/providers/gitlabhq/gitlab/18.6.1/docs/data-sources/group) | data source |
+| [gitlab_group.shared_groups](https://registry.terraform.io/providers/gitlabhq/gitlab/18.6.1/docs/data-sources/group) | data source |
+| [gitlab_user.members](https://registry.terraform.io/providers/gitlabhq/gitlab/18.6.1/docs/data-sources/user) | data source |
 
-* [Set up project integrations](https://gitlab.com/pl.rachuna-net/artifacts/opentofu/gitlab-group/-/settings/integrations)
+## Inputs
 
-## Collaborate with your team
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_allowed_avatar_types_json"></a> [allowed\_avatar\_types\_json](#input\_allowed\_avatar\_types\_json) | Path to allowed avatar types json | `string` | `""` | no |
+| <a name="input_avatar"></a> [avatar](#input\_avatar) | Type of the icon for the group (default: from type) | `string` | `""` | no |
+| <a name="input_avatars_dir"></a> [avatars\_dir](#input\_avatars\_dir) | Avatars directory png files | `string` | `""` | no |
+| <a name="input_badges"></a> [badges](#input\_badges) | n/a | <pre>map(object({<br/>    link_url  = string<br/>    image_url = string<br/>  }))</pre> | `{}` | no |
+| <a name="input_default_branch"></a> [default\_branch](#input\_default\_branch) | The group's default branch | `string` | `"main"` | no |
+| <a name="input_description"></a> [description](#input\_description) | Description of the gitlab group | `string` | n/a | yes |
+| <a name="input_labels"></a> [labels](#input\_labels) | n/a | <pre>map(object({<br/>    description = string<br/>    color       = string<br/>  }))</pre> | `{}` | no |
+| <a name="input_members"></a> [members](#input\_members) | Map of GitLab users to add to the group keyed by username | <pre>map(object({<br/>    access_level = string<br/>    expires_at   = optional(string)<br/>  }))</pre> | `{}` | no |
+| <a name="input_name"></a> [name](#input\_name) | Name of the gitlab group | `string` | n/a | yes |
+| <a name="input_parent_group"></a> [parent\_group](#input\_parent\_group) | Gitlab parent group | `string` | n/a | yes |
+| <a name="input_shared_groups"></a> [shared\_groups](#input\_shared\_groups) | Map of GitLab groups to share access to this group keyed by group full path | <pre>map(object({<br/>    access_level = string<br/>    expires_at   = optional(string)<br/>  }))</pre> | `{}` | no |
+| <a name="input_variables"></a> [variables](#input\_variables) | n/a | <pre>map(object({<br/>    value             = string<br/>    description       = optional(string)<br/>    protected         = optional(bool)<br/>    masked            = optional(bool)<br/>    environment_scope = optional(string)<br/>  }))</pre> | `{}` | no |
+| <a name="input_visibility"></a> [visibility](#input\_visibility) | The group's visibility | `string` | `"private"` | no |
 
-* [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-* [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-* [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-* [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-* [Set auto-merge](https://docs.gitlab.com/user/project/merge_requests/auto_merge/)
+## Outputs
 
-## Test and Deploy
+| Name | Description |
+|------|-------------|
+| <a name="output_full_path"></a> [full\_path](#output\_full\_path) | n/a |
+| <a name="output_id"></a> [id](#output\_id) | n/a |
+<!-- END_TF_DOCS -->
 
-Use the built-in continuous integration in GitLab.
+---
+## Contributions
+Jeśli masz pomysły na ulepszenia, zgłoś problemy, rozwidl repozytorium lub utwórz Merge Request. Wszystkie wkłady są mile widziane!
+[Contributions](CONTRIBUTING.md)
 
-* [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/)
-* [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-* [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-* [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-* [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
-
-***
-
-# Editing this README
-
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
-
-## Suggestions for a good README
-
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
-
-## Name
-Choose a self-explaining name for your project.
-
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
-
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
-
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
-
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
-
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
-
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
-
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
-
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
-
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
-
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
-
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
-
+---
 ## License
-For open source projects, say how it is licensed.
+Projekt jest udostępniany na warunkach licencji opisanych w pliku [LICENSE](LICENSE).
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+---
+# Author Information
+### &emsp; Maciej Rachuna
+# <img src="docs/logo.png" alt="rachuna-net.pl" height="100"/>
