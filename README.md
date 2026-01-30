@@ -67,7 +67,7 @@ Jeśli masz pomysły na ulepszenia, zgłoś problemy, rozwidl repozytorium lub u
 
 ---
 ## License
-Projekt jest udostępniany na warunkach licencji opisanych w pliku [LICENSE](LICENSE).
+Projekt licencjonowany jest na warunkach [Licencji MIT](LICENSE).
 
 ---
 # Author Information
