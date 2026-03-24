@@ -34,21 +34,14 @@ variable "default_branch" {
   description = "The group's default branch"
 }
 
-variable "allowed_avatar_types_json" {
-  type        = string
-  default     = ""
-  description = "Path to allowed avatar types json"
-}
-
-
 variable "avatar" {
   type        = string
-  description = "Type of the icon for the group (default: from type)"
+  description = "Path to the avatar .png file for the group"
   default     = ""
 
   validation {
-    condition     = contains(local.allowed_avatar_types, var.avatar)
-    error_message = "Unsupported group type"
+    condition     = var.avatar == "" || endswith(var.avatar, ".png")
+    error_message = "Avatar must be a .png file"
   }
 }
 
@@ -125,8 +118,3 @@ variable "shared_groups" {
   }
 }
 
-variable "avatars_dir" {
-  description = "Avatars directory png files"
-  type        = string
-  default     = ""
-}
