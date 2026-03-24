@@ -38,9 +38,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_allowed_avatar_types_json"></a> [allowed\_avatar\_types\_json](#input\_allowed\_avatar\_types\_json) | Path to allowed avatar types json | `string` | `""` | no |
-| <a name="input_avatar"></a> [avatar](#input\_avatar) | Type of the icon for the group (default: from type) | `string` | `""` | no |
-| <a name="input_avatars_dir"></a> [avatars\_dir](#input\_avatars\_dir) | Avatars directory png files | `string` | `""` | no |
+| <a name="input_avatar"></a> [avatar](#input\_avatar) | Path to the avatar .png file for the group | `string` | `""` | no |
 | <a name="input_badges"></a> [badges](#input\_badges) | n/a | <pre>map(object({<br/>    link_url  = string<br/>    image_url = string<br/>  }))</pre> | `{}` | no |
 | <a name="input_default_branch"></a> [default\_branch](#input\_default\_branch) | The group's default branch | `string` | `"main"` | no |
 | <a name="input_description"></a> [description](#input\_description) | Description of the gitlab group | `string` | n/a | yes |
