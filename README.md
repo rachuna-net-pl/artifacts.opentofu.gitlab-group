@@ -1,4 +1,4 @@
-# <img src="docs/opentofu.png" alt="opentofu" height="20"/> gitlab-group
+# <img src="docs/opentofu.png" alt="opentofu" height="30"/> gitlab-group
 
 Zarządzanie grupami w GitLab
 
@@ -8,13 +8,13 @@ Zarządzanie grupami w GitLab
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.10.5 |
-| <a name="requirement_gitlab"></a> [gitlab](#requirement\_gitlab) | 18.8.2 |
+| <a name="requirement_gitlab"></a> [gitlab](#requirement\_gitlab) | 18.11.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_gitlab"></a> [gitlab](#provider\_gitlab) | 18.8.2 |
+| <a name="provider_gitlab"></a> [gitlab](#provider\_gitlab) | 18.11.0 |
 
 ## Modules
 
@@ -24,15 +24,15 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [gitlab_group.group](https://registry.terraform.io/providers/gitlabhq/gitlab/18.8.2/docs/resources/group) | resource |
-| [gitlab_group_badge.badge](https://registry.terraform.io/providers/gitlabhq/gitlab/18.8.2/docs/resources/group_badge) | resource |
-| [gitlab_group_label.label](https://registry.terraform.io/providers/gitlabhq/gitlab/18.8.2/docs/resources/group_label) | resource |
-| [gitlab_group_membership.members](https://registry.terraform.io/providers/gitlabhq/gitlab/18.8.2/docs/resources/group_membership) | resource |
-| [gitlab_group_share_group.shared_groups](https://registry.terraform.io/providers/gitlabhq/gitlab/18.8.2/docs/resources/group_share_group) | resource |
-| [gitlab_group_variable.variable](https://registry.terraform.io/providers/gitlabhq/gitlab/18.8.2/docs/resources/group_variable) | resource |
-| [gitlab_group.parent](https://registry.terraform.io/providers/gitlabhq/gitlab/18.8.2/docs/data-sources/group) | data source |
-| [gitlab_group.shared_groups](https://registry.terraform.io/providers/gitlabhq/gitlab/18.8.2/docs/data-sources/group) | data source |
-| [gitlab_user.members](https://registry.terraform.io/providers/gitlabhq/gitlab/18.8.2/docs/data-sources/user) | data source |
+| [gitlab_group.group](https://registry.terraform.io/providers/gitlabhq/gitlab/18.11.0/docs/resources/group) | resource |
+| [gitlab_group_badge.badge](https://registry.terraform.io/providers/gitlabhq/gitlab/18.11.0/docs/resources/group_badge) | resource |
+| [gitlab_group_label.label](https://registry.terraform.io/providers/gitlabhq/gitlab/18.11.0/docs/resources/group_label) | resource |
+| [gitlab_group_membership.members](https://registry.terraform.io/providers/gitlabhq/gitlab/18.11.0/docs/resources/group_membership) | resource |
+| [gitlab_group_share_group.shared_groups](https://registry.terraform.io/providers/gitlabhq/gitlab/18.11.0/docs/resources/group_share_group) | resource |
+| [gitlab_group_variable.variable](https://registry.terraform.io/providers/gitlabhq/gitlab/18.11.0/docs/resources/group_variable) | resource |
+| [gitlab_group.parent](https://registry.terraform.io/providers/gitlabhq/gitlab/18.11.0/docs/data-sources/group) | data source |
+| [gitlab_group.shared_groups](https://registry.terraform.io/providers/gitlabhq/gitlab/18.11.0/docs/data-sources/group) | data source |
+| [gitlab_user.members](https://registry.terraform.io/providers/gitlabhq/gitlab/18.11.0/docs/data-sources/user) | data source |
 
 ## Inputs
 
@@ -65,9 +65,9 @@ Jeśli masz pomysły na ulepszenia, zgłoś problemy, rozwidl repozytorium lub u
 
 ---
 ## License
-Projekt licencjonowany jest na warunkach [Licencji MIT](LICENSE).
+[Licencja](LICENSE) oparta na zasadach Creative Commons BY-NC-SA 4.0, dostosowana do potrzeb projektu.
 
 ---
 # Author Information
-### &emsp; Maciej Rachuna
+### Maciej Rachuna
 # <img src="docs/logo.png" alt="rachuna-net.pl" height="100"/>
